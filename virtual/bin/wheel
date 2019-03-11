@@ -1,4 +1,4 @@
-#!/home/lorna/Documents/django-workout/instagram/virtual/bin/python
+#!/home/lorna/Documents/django-workout/instagram/virtual/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
