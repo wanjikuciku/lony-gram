@@ -3,7 +3,6 @@ from .models import Image,Profile
 from pyuploadcare.dj.forms import ImageField
 
 
-
 class ImageForm(forms.ModelForm):
     image_url = ImageField(label='Picture')
     class Meta:

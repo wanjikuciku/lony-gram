@@ -32,7 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'photos',
-    'bootstrap3',
+    'pyuploadcare.dj',
+    'bootstrap4',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -69,6 +70,10 @@ TEMPLATES = [
         },
     },
 ]
+UPLOADCARE = {
+    'pub_key': '21a4918e4d3fdf5b49e8',
+    'secret': '25d3372263e42f458700',
+}
 
 WSGI_APPLICATION = 'instagram.wsgi.application'
 
