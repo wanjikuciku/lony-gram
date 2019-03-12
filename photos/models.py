@@ -67,5 +67,3 @@ class Follow(models.Model):
     user = models.ForeignKey(User, related_name = "user_followers")
     followed_by = models.ForeignKey(User, related_name = "user_following")
 
-class idss(models.Model):
-    identifier = models.CharField(max_length = 30, null = True)

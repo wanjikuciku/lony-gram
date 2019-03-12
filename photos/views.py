@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse,HttpResponseRedirect
 from django.contrib.auth.models import User
 from .forms import ImageForm,ProfileForm
-from .email import send_welcome_email
+
 
 # Create your views here.
 @login_required(login_url = "accounts/login")
