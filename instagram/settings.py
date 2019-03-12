@@ -53,8 +53,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -109,14 +107,14 @@ WSGI_APPLICATION = 'instagram.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'instagram',
-        'USER': 'lorna',
-        'PASSWORD':'milkshake',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'instagram',
+#         'USER': 'lorna',
+#         'PASSWORD':'milkshake',
+#     }
+# }
 
 
 # Password validation

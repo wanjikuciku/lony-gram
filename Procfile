@@ -1,1 +1,1 @@
-web: gunicorn Piktures.wsgi --log-file -
+web: gunicorn instagram.wsgi --log-file -
