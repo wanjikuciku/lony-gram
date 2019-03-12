@@ -6,27 +6,27 @@ This is a clone of the popular istagram website. 12th March 2019
 is a clone of the popular istagram website.
 
 ## Specifications
-Users can view pictures.
-Users can search for category pictures.
+Users can view pictures their followers and following posted images.
+Users can post their own images.
 Users can select a location of their interest to view pictures.
 
 ## Setup/Installation Requirements
 To start using this project use the following commands:
 
-* git clone https://github.com/wanjikuciku/piktures.git
-* cd piktures
+* git clone https://github.com/wanjikuciku/lony-gram.git
+* cd instagram
 * atom .
 * code . (this is if Visual Studio Code is your preferred text editor)
 
 * The repo comes in a zipped or compressed format. Extract to your prefered location and open it.
 
-* open your terminal and navigate to piktures then create a virtual environment.For detailed guide refer here
+* open your terminal and navigate to instagram then create a virtual environment.For detailed guide refer here
 
 * To run the app, you'll have to run the following commands in your terminal
 
 pip install -r requirements.txt
 
-* On your terminal,Create database piktures2 using the command below.
+* On your terminal,Create database instagram using the command below.
 
 CREATE DATABASE piktures2;
 
