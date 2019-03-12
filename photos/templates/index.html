@@ -56,7 +56,7 @@
                         <form action="{% url 'like' %}" method="post" class="form-inline">
                             {%csrf_token%}
                             <p class="likes-icon mr-2">{{image.likes.all.count}} likes</p>
-                            <!-- <button type="submit" class="btn btn-success like-btn" onclick="liker('{{image.id}}')">Like</button> -->
+                            <button type="submit" class="btn btn-success like-btn" onclick="liker('{{image.id}}')">Like</button>
                         </form>
                         <div class="comments">
                             {% for comment in image.comments.all %}
