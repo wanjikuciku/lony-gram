@@ -5,11 +5,6 @@ This is a clone of the popular istagram website. 12th March 2019
 ## Description
 is a clone of the popular istagram website.
 
-## Specifications
-Users can view pictures their followers and following posted images.
-Users can post their own images.
-Users can select a location of their interest to view pictures.
-
 ## Setup/Installation Requirements
 To start using this project use the following commands:
 
