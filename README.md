@@ -1,4 +1,4 @@
-# Imstagram
+# Instagram
 This is a clone of the popular istagram website. 12th March 2019
 ### By Lorna wanjiku
 
