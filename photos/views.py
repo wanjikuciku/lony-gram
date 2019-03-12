@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.shortcuts import render,redirect
-from .models import Image,Follow,Profile,Comments
+from .models import Image,Follow,Profile,Comments,idss
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse,HttpResponseRedirect
 from django.contrib.auth.models import User
