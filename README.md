@@ -49,7 +49,8 @@ python manage.py runserver
 | The program should navigate to sign up page when Sign Up is clicked  | Click on Sign Up on the registration form | Redirected to the sign up page |
 |The program should navigate to the login page when Login is clicked | Click on Login on the registration form |Redirected to the login page |
 |The program should direct the user to their timeline page when logged in | Login as a user | Redirected to the timeline page with photos of users you follow |
-|The program should add a like or remove a like when the heart icon is clicked on | Click on the heart icon
+|The program should add a like or remove a like when the heart icon is clicked on | Click on the heart icon | Click on the heart icon | A like is added if it wasn't added before else it is removed |
+Ther
 
 ## Prerequisites
 You need the following to work on the project: -Python version 3.6 -Django -Pip -virtualenv -A text Editor
