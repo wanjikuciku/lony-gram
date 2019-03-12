@@ -45,9 +45,11 @@ python manage.py runserver
 ## Behaviour Driven Development
 |  Behaviour |  Input  |  Output |
 |------------|---------|---------|
-| Home | - | - |
-|Click on location | enter a location | pictures |
-|Search icon | Search on a category |images are displayed |
+| The program should display the explore page on load of the application | On page load | Explore page with all latest photos from all users |
+| The program should navigate to sign up page when Sign Up is clicked  | Click on Sign Up on the registration form | Redirected to the sign up page |
+|The program should navigate to the login page when Login is clicked | Click on Login on the registration form |Redirected to the login page |
+|The program should direct the user to their timeline page when logged in | Login as a user | Redirected to the timeline page with photos of users you follow |
+|The program should add a like or remove a like when the heart icon is clicked on | Click on the heart icon
 
 ## Prerequisites
 You need the following to work on the project: -Python version 3.6 -Django -Pip -virtualenv -A text Editor
