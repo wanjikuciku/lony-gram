@@ -28,7 +28,7 @@ pip install -r requirements.txt
 
 * On your terminal,Create database instagram using the command below.
 
-CREATE DATABASE piktures2;
+CREATE DATABASE instagram;
 
 * Migrate the database using the command below
 
