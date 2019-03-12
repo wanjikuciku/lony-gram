@@ -1,0 +1,42 @@
+* {
+    overflow-x: hidden;
+    font-family: Maven Pro;
+
+}
+.desc-on-sm {
+    display: none;
+}
+.container {
+    margin-top: 50px;
+   
+}
+nav {
+    box-shadow: 0 4px 2px -2px #C13584;
+    margin-bottom: 80px;
+    background-color: #C13584;
+}
+
+.nav-search-form {
+    position: relative;
+    left: 30%;
+    background-color: #C13584;
+}
+
+@media (max-width: 930px) {
+    .nav-search-form {
+           position: relative;
+           left: 0;
+           right: 30%;
+    }
+    .nav-search-btn {
+        display: none;
+    }
+    .desc-on-sm {
+        display: inline-block;
+    }
+}
+@media (max-width: 750px) {
+    .comment-val {
+        width: 50%;
+    }
+}

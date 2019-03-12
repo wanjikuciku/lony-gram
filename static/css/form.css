@@ -1,0 +1,16 @@
+.form-container {
+    margin-top: 130px;
+    margin-left: 40%;
+    margin-right: auto;
+}
+nav {
+    box-shadow: 0 4px 2px -2px #C13584;
+    margin-bottom: 50px;
+    background-color: #C13584;
+}
+* {
+    font-family: Maven Pro;
+}
+.desc-on-sm {
+    display: none;
+}
