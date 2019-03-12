@@ -63,7 +63,7 @@ None at the moment, but if found please contact.
 ## Technologies Used
 * Python
 * HTML
-* Django micro-framework
+* Django
 * W3 schools
 * Bootstrap(used for styling)
 
