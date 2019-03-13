@@ -15,7 +15,7 @@ class ImageTestCase(TestCase):
         """
         This will create a new imae before each test
         """
-        self.new_user = User(username = "Hey", email = "marvin.chomba24@gmaul.com",password = "heyjfbghjdnf")
+        self.new_user = User(username = "Hey", email = "lorna.wanjiku56@gmail.com",password = "milkshake")
         self.new_user.save()
         self.new_image = Image(name = 'Hey', user = self.new_user)
         self.new_image.save()
@@ -46,23 +46,14 @@ class ImageTestCase(TestCase):
         self.new_image.save_image()    
         self.assertTrue(len(Image.objects.all()) > 0)
 
-    def test_image_delete(self):
-        """
-        This will test whether the image is deleted from the db
-        """
-        self.new_image.save_image()
-        self.assertTrue(len(Image.objects.all()) > 0)
-        self.new_image.delete_image()
-        self.assertTrue(len(Image.objects.all()) == 0)
-
-    def test_edit_caption(self):
-        """
-        This will test the edit caption function
-        """
-        self.new_image.save_image()
-        image = Image.objects.get(id = 1)
-        image.update_caption("Hey there")
-        self.assertTrue(image.caption == "Hey there")
+    # def test_image_delete(self):
+    #     """
+    #     This will test whether the image is deleted from the db
+    #     """
+    #     self.new_image.save_image()
+    #     self.assertTrue(len(Image.objects.all()) > 0)
+    #     self.new_image.delete_image()
+    #     self.assertTrue(len(Image.objects.all()) == 0)
 
 
 class CommentTestCases(TestCase):
@@ -95,16 +86,9 @@ class CommentTestCases(TestCase):
         self.new_comment.save_comment()
         self.assertTrue(len(Comments.objects.all()) > 0)
 
-    def test_delete_comment(self):
-        """
-        This will test whether the comment is deleted
-        """
-        self.new_comment.save_comment()
-        self.assertTrue(len(Comments.objects.all()) > 0)
-        self.new_comment.delete_comment()
-        self.assertTrue(len(Comments.objects.all()) == 0)
+  
 
-class ProfileTestCases(self):
+class ProfileTestCases(testCase):
     """
     This will test the profiles
     """

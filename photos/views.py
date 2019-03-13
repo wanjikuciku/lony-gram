@@ -69,30 +69,13 @@ def comment(request):
 def follow(request):
     image = Image.objects.get(id = request.POST.get("id"))
     user = image.user
-    followed = None
     followers = user.user_followers.all()
     if Follow.objects.filter(user = user, followed_by = request.user):
-        Follow.objects.filter(user = user, followed_by = request.user).delete()
         followed = 0
     else:
         Follow.objects.create(user = user, followed_by = request.user)
         followed = 1
     data = {"hey":"hey", "followed":followed}
-    return JsonResponse(data)
-
-def follow_in_profile(request):
-    user = User.objects.get(id = request.POST.get("id"))
-    followed = None
-    followers = user.user_followers.all()
-    if Follow.objects.filter(user = user, followed_by = request.user):
-        Follow.objects.filter(user = user, followed_by = request.user).delete()
-        followed = 0
-        count = user.user_followers.all().count()
-    else:
-        Follow.objects.create(user = user, followed_by = request.user)
-        followed = 1
-        count = user.user_followers.all().count()
-    data = {"hey":"hey", "followed":followed, "count":count}
     return JsonResponse(data)
 
 def add_image(request):
