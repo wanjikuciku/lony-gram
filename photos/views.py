@@ -81,6 +81,8 @@ def update_profile(request):
     if request.method == "POST":
         form = ProfileForm(request.POST,request.FILES)
         if form.is_valid():
+            new_bio = form.cleaned_data['bio']
+            new_pic = form.cleaned_data['pic']
             profile = Profile.objects.get(user = request.user)
             profile.bio = new_bio
             profile.pic = new_pic

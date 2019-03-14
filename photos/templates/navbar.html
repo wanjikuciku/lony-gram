@@ -1,42 +1,88 @@
-<div style="background-color: #C13584;" class="navbar" role="navigation" style="margin-bottom:0; border-bottom: 1px solid"></div>
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mb-5">
-            <div class="brand-sign">
-                <a href="/"><img src="../../media/images/insta_brand.jpeg" alt="" height="45px" width="130px"></a>
-                
-            </div>
-            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNav"
-                aria-controls="myNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<!DOCTYPE html>
+<html lang="en">
 
-            <div class="collapse navbar-collapse" id="myNav">
-                <form action="{% url 'search' %}" role="search" class="form-inline nav-search-form" >
-                    <input type="text" name="user_search_term" id="" class="form-control" style="height: 30px;border-top-right-radius: 0;border-bottom-right-radius: 0" placeholder="Search users...">
-                    <div class="input-group-btn">
-                    <button type="submit" class="btn nav-search-btn" style="height: 30px;overflow: hidden; border-top-left-radius: 0;border-bottom-left-radius: 0;"><i
-                class="fas fa-search"></i></button>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <nav style="background-color:white; overflow-x: hidden;" class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="brand-sign">
+                    <a href="/"><img src="../../media/images/insta_brand.jpeg" alt="" height="45px" width="130px"></a>
+                </div>
+
+            </div>
+
+            <!-- Adding a search form  -->
+            <div class="col-sm-4 col-md-4 navbar-right">
+
+                <form class="navbar-form" role="search" action="{% url 'search' %}">
+
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for a user">
+                        <div class="input-group-btn">
+                            <button style="text-align: center" class="btn btn-default" type="submit"><i
+                                class="fas fa-search"></i></button>
+                        </div>
                     </div>
+
                 </form>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active ml-3 mt-1">
-                        <a class="nav-link" href="/"><i class="mr-2 fas fa-home" style="font-size: 18px"></i></span><span class="desc-on-sm">Home</span></a>
+            </div>
+            <!-- search form end -->
+            <!--The search form above-->
+            <div class="col-sm-8 col-md-8">
+
+                <ul>
+                    <li>
+                        <a class="nav-link" href="/"><i class="mr-2 fas fa-home"
+                                style="font-size: 18px"></i></span><span class="desc-on-sm">Home</span></a>
                     </li>
-                    <li class="nav-item active ml-3 mt-1">
-                        <a class="nav-link" href="/add/image"><i class="mr-2 fas fa-plus" style="font-size: 18px"></i></span><span class="desc-on-sm">Add Image</span></a>
+                    <li>
+                        <a class="nav-link" href="/add/image"><i class="mr-2 fas fa-plus"
+                                style="font-size: 18px"></i></span><span class="desc-on-sm">Add Image</span></a>
                     </li>
-                    <li class="nav-item active ml-3 mt-1">
-                        <a class="nav-link" href="{% url 'my_profile'%}"><i class="mr-2 fas fa-user" style="font-size: 18px"></i><span class="desc-on-sm">Profile</span></a>
+                    <li>
+                        <a class="nav-link" href="{% url 'my_profile'%}"><i class="mr-2 fas fa-user"
+                                style="font-size: 18px"></i><span class="desc-on-sm">Profile</span></a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link ml-3 mt-1" href="/accounts/password/change"><i class="mr-2 fas fa-user-lock" style="font-size: 18px"></i><span class="desc-on-sm">Change Password</span></a>
+                    <li>
+                        <a class="nav-link" href="/accounts/password/change"><i class="mr-2 fas fa-user-lock"
+                                style="font-size: 18px"></i><span class="desc-on-sm">Change Password</span></a>
                     </li>
-                    <li class="nav-item active ml-3 mt-1">
-                    <a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt mr-2" style="font-size: 18px"></i><span class="desc-on-sm">Logout</span></a>
+                    <li>
+                        <a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt mr-2"
+                                style="font-size: 18px"></i><span class="desc-on-sm">Logout</span></a>
                     </li>
                 </ul>
+
+
             </div>
-        </nav>
-    </div>
-</div>
+        </div>
+    </nav>
+</body>
+
+<style>
+
+    ul {
+        float: right;
+    }
+
+    ul li {
+        display: inline-block;
+    }
+    ul li a {
+        color: black;
+    }
+</style>
+
+</html>
+<br>
+
+
+
+
+
