@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    
+    {% include 'navbar.html' %}
     <div class="col-sm-6 form-container">
         <form action="{%url 'update_profile'%}" method="post" enctype="multipart/form-data">
             {%csrf_token%}
