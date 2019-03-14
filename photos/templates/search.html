@@ -45,17 +45,7 @@
 {% block scripts %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 {% bootstrap_javascript %}
-    <script>
-        window.addEventListener( "pageshow", function ( event ) {
-            var historyTraversal = event.persisted ||
-            ( typeof window.performance != "undefined" &&
-            window.performance.navigation.type === 2 );
-            if ( historyTraversal ) {
-                // Handle page restore.
-                window.location.reload();
-            }
-        });
-    </script>
+    
 {% endblock %}
 </body>
 </html>

@@ -1,6 +1,6 @@
 $(document).ready(() => {
     $(".like-btn").click((e) => {
-        e.preventDefault()
+        event.preventDefault()
         id = $(".like-btn").attr("value")
         alert(id)
         section = $("#image-section")

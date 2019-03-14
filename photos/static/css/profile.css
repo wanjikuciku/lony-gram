@@ -4,7 +4,7 @@
 nav {
     box-shadow: 0 4px 2px -2px #C13584;
     margin-bottom: 50px;
-    background-color: #C13584;
+   
 }
 * {
     font-family: Maven Pro;
@@ -12,7 +12,7 @@ nav {
 .nav-search-form {
     position: relative;
     left: 30%;
-    background-color: #C13584;
+    
 }
 .desc-on-sm {
     display: none;

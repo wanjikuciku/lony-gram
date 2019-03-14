@@ -35,9 +35,9 @@
                         {% if image.user.me %}
                             <button class="btn follow-btn" style="position: relative;left: 10000px">Me</button>
                         {% elif image.user.is_following %}
-                            <a class="btn follow-btn" onclick="follower('{{image.id}}')"><i class="fas fa-user-check"></i></a>
-                        {% else %}
                             <a class="btn follow-btn" onclick="follower('{{image.id}}')"><i class="fas fa-user-plus"></i></a>
+                        {% else %}
+                            <a class="btn follow-btn" onclick="follower('{{image.id}}')"><i class="fas fa-user-check"></i></a>
                         {% endif %}
                         <div>
                             <small>{{image.pub_date|timesince}} ago</small>
@@ -77,55 +77,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         {% bootstrap_javascript %}
         <script>
-        window.addEventListener( "pageshow", function ( event ) {
-            var historyTraversal = event.persisted ||
-            ( typeof window.performance != "undefined" &&
-            window.performance.navigation.type === 2 );
-            if ( historyTraversal ) {
-                // Handle page restore.
-                window.location.reload();
-            }
-        });
-            $(".like-btn").click((e) => {
-                e.preventDefault()
-            })
+        
             
-            function liker(id) {
-                image_id = id
-                let icons = document.getElementsByClassName("likes-icon")
-                let btns = document.getElementsByClassName("fa-heart")
-                btns_arr = []
-                icons_arr = []
-                for (let i of btns) {
-                    btns_arr.unshift(i)
-                }
-                for(let i of icons) {
-                    icons_arr.unshift(i)
-                }
-                $.ajax({
-                    "url":"/ajax/like/",
-                    "type": "POST",
-                    "data": {
-                        "id":image_id,  
-                        "csrfmiddlewaretoken": '{{csrf_token}}'
-                    },
-                    "dataType":"json",
-                    "success": function(res) {
-                        let imagess = parseInt(image_id)
-                        imagess -= 1
-                        icons_arr[imagess].innerHTML = res['likes'] + " likes"
-                        if(res["to_red"] == 1) {
-                            btns_arr[imagess].classList.remove("far")
-                            btns_arr[imagess].classList.add("fas")
-                            btns_arr[imagess].style.color = "red"
-                        } else {
-                            btns_arr[imagess].classList.remove("fas")
-                            btns_arr[imagess].classList.add("far")  
-                            btns_arr[imagess].style.color = "black"                     
-                        }
-                    }
-                })
-            } 
             
             $(".comment-btn").click(e => {
                 e.preventDefault()
@@ -163,30 +116,7 @@
                 })
                 $(".comment-val").val("") 
             }
-            function follower(id) {
-                let image_id = parseInt(id)
-                followBtns = document.getElementsByClassName("follow-btn")
-                followBtns_arr = []
-                for (let i of followBtns) {
-                    followBtns_arr.unshift(i)
-                }
-                $.ajax({
-                    "url": "/ajax/follow/",
-                    "type": "POST",
-                    "data": {
-                        "id":image_id,
-                        "csrfmiddlewaretoken": '{{csrf_token}}'
-                        },
-                    "dataType": "json",
-                    "success": function(res) {
-                        if(res['followed'] == 1) {
-                            followBtns_arr[image_id - 1].innerHTML = "<i class='fas fa-user-check'></i>"
-                        } else {
-                            followBtns_arr[image_id - 1].innerHTML = "<i class='fas fa-user-plus'></i>"
-                        }
-                    }
-                })
-            }
+            
         </script>
     {% endblock %}
 </body>

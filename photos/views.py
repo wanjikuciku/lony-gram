@@ -39,12 +39,7 @@ def like(request):
     user = request.user
     images = Image.objects.all()
     image_id = request.POST.get("id")
-    if image_id != None:
-        idss.objects.create(identifier = request.POST.get("id"))
-    last_one = idss.objects.all()
-    mwisho = idss.objects.get(pk = last_one.count())
-    image = Image.objects.get(pk = mwisho.identifier)
-    to_red = None
+    
     if user in image.likes.all():
         image.likes.remove(user)
         to_red = 0
@@ -66,17 +61,7 @@ def comment(request):
     data = {"user":user, "comment":comment}
     return JsonResponse(data)
 
-def follow(request):
-    image = Image.objects.get(id = request.POST.get("id"))
-    user = image.user
-    followers = user.user_followers.all()
-    if Follow.objects.filter(user = user, followed_by = request.user):
-        followed = 0
-    else:
-        Follow.objects.create(user = user, followed_by = request.user)
-        followed = 1
-    data = {"hey":"hey", "followed":followed}
-    return JsonResponse(data)
+
 
 def add_image(request):
     user = request.user
@@ -96,8 +81,6 @@ def update_profile(request):
     if request.method == "POST":
         form = ProfileForm(request.POST,request.FILES)
         if form.is_valid():
-            new_bio = form.cleaned_data["bio"]
-            new_pic = form.cleaned_data["pic"]
             profile = Profile.objects.get(user = request.user)
             profile.bio = new_bio
             profile.pic = new_pic

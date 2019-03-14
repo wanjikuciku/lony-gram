@@ -82,26 +82,6 @@
 {% block scripts %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 {% bootstrap_javascript %}
-    <script>
-        window.addEventListener("pageshow", function (event) {
-            var historyTraversal = event.persisted ||
-                (typeof window.performance != "undefined" &&
-                    window.performance.navigation.type === 2);
-            if (historyTraversal) {
-                // Handle page restore.
-                window.location.reload();
-            }
-        });
-        showModal = (url,name,caption) => {
-            $("#label").text(name)
-            $("#myModal").modal("show")
-            $(".mod-img").attr("src",url)
-            $("#img-desc").text(caption)
-            // $("#url-to-copy").val(window.location.origin + url)
-            // $("#img-location").text("Location: " + loc)
-            // $("#img-category").text("Category: " + cat)
-        }
-    </script>
     {% endblock %}
 </body>
 
