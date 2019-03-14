@@ -50,7 +50,7 @@ python manage.py runserver
 ## Prerequisites
 You need the following to work on the project: -Python version 3.6 -Django -Pip -virtualenv -A text Editor
 
-## Link to Live Website https://lona-insta.herokuapp.com/
+## Link to Live Website https://lona-instagram.herokuapp.com
 
 ## Known Bugs
 None at the moment, but if found please contact.
