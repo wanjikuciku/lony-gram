@@ -27,14 +27,14 @@
                     <img class="d-inline-block" src="{{user.profile.pic.cdn_url}}" alt="" height="60px" width="60px" style="border-radius: 50%;">
                     {% endif %}
                     <a href="{% url 'profile' user.id%}" class="text-dark"><h4 class="d-inline-block">{{user.username}}</h4></a>
-                    <table class="table w-50 mt-4">
-                        <tbody>
-                            <td>Posts: {{user.posts.all.count}}</td>
-                            <td>Following: {{user.user_following.all.count}}</td>
-                            <td>Followers: {{user.user_followers.all.count}}</td>
-                        </tbody>
-                    </table>
+                    <div class="col-md-5">
+                        <h4 class="d-inline-block">{{user.username}}</h4>
+                        <p>Posts: {{user.posts.all.count}}</p>
+                        <p>Followers: {{user.user_followers.all.count}}</p>
+                        <p>Following: {{user.user_following.all.count}}</p>
+                    </div>
                 </div>
+                
             {% endfor %}
         {% else %}
             <h3>There are no users like that</h3>
