@@ -14,25 +14,10 @@ def index(request):
     user_has_liked_list = []
     images = Image.objects.all().order_by("-pub_date")
     for image in images:
-        user = image.user
-        followers = user.user_followers.all()
-        arr_ = []
-        for follower in followers:
-            arr_.append(follower.followed_by.id)
-
-        if request.user.id in arr_:
-            image.user.is_following = True
-        else: 
-            image.user.is_following = False
-        
         if image.user.id == request.user.id:
             user.me = True
         else:
             user.me = False
-        if request.user in image.likes.all():
-            image.user_has_liked = True
-        else:
-            image.user_has_liked = False
     return render(request,"index.html", {"images":images,"user":request.user})
 
 def like(request):
@@ -104,17 +89,7 @@ def my_profile(request):
 
 def profile(request,id):
     user = User.objects.get(id = id)
-    followers = user.user_followers.all()
-    followers_arr = []
-    for follower in followers:
-        followers_arr.append(follower.followed_by.id)
-    
-    if request.user.id in followers_arr:
-        is_following = True
-    else:
-        is_following = False
-    
     if request.user.id == int(id):
         return redirect("my_profile")
     else:
-        return render(request, "profile.html", {"user":user,"current_user":request.user, "is_following": is_following})
+        return render(request, "profile.html", {"user":user,"current_user":request.user,})

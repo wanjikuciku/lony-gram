@@ -25,7 +25,6 @@
                 <div class="user-profiles">
                     {% if user.profile.pic%}
                     <img class="d-inline-block" src="{{user.profile.pic.cdn_url}}" alt="" height="60px" width="60px" style="border-radius: 50%;">
-                    
                     {% endif %}
                     <a href="{% url 'profile' user.id%}" class="text-dark"><h4 class="d-inline-block">{{user.username}}</h4></a>
                     <table class="table w-50 mt-4">
