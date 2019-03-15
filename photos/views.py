@@ -14,6 +14,7 @@ def index(request):
     user_has_liked_list = []
     images = Image.objects.all().order_by("-pub_date")
     for image in images:
+        user = image.user
         if image.user.id == request.user.id:
             user.me = True
         else:
