@@ -12,7 +12,6 @@
                 <form action="{% url 'like' %}" method="post" id="form-section">
                     {%csrf_token%}
                     <p>{{image.likes.all.count}}</p>
-                    <!-- <button type="submit" class="btn btn-success like-btn" valu->
                 </form>
                 <p>{{image.comments.all.count}}</p>
             </div>
