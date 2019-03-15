@@ -26,19 +26,10 @@
                 <div class="card" id="{{image.id}}">
                     <div class="card-header">
                         {% if image.user.profile.pic%}
-                        <img src="{{image.user.profile.pic.cdn_url}}" alt="" height="40px" width="40px" style="border-radius: 50%;">
-                        {% else %}
-                        <img src="../../media/pics/profile.png" alt="" height="40px" width="40px" style="border-radius: 50%;">
+                        <img src="{{image.user.profile.pic.cdn_url}}" alt="" height="50px" width="50px" style="border-radius: 50%;">
                         {% endif %}
                         <a href="{% url 'profile' image.user.id%}" class="text-dark"> {{image.user.username}}
                         </a>
-                        {% if image.user.me %}
-                            <button class="btn follow-btn" style="position: relative;left: 10000px">Me</button>
-                        {% elif image.user.is_following %}
-                            <a class="btn follow-btn" onclick="follower('{{image.id}}')"><i class="fas fa-user-plus"></i></a>
-                        {% else %}
-                            <a class="btn follow-btn" onclick="follower('{{image.id}}')"><i class="fas fa-user-check"></i></a>
-                        {% endif %}
                         <div>
                             <small>{{image.pub_date|timesince}} ago</small>
                         </div>
@@ -47,11 +38,7 @@
                         <img src="{{image.image_url.cdn_url}}" alt="" ondblclick="liker('{{image.id}}')"class="img-responsive" style="max-height: 400px; width: 100%;">
                     </div>
                     <div class="card-footer">
-                        {% if image.user_has_liked %}
-                        <span onclick="liker('{{image.id}}')" class="likes-btn"><i class="fas fa-heart" style="color: red;border: none;font-size: 20px"></i></span>
-                        {% else %}
-                        <span onclick="liker('{{image.id}}')" class="likes-btn"><i class="far fa-heart" style="font-size: 20px"></i></span>
-                        {% endif %}
+                        
                         <p>{{image.caption}}</p>
                         <form action="{% url 'like' %}" method="post" class="form-inline">
                             {%csrf_token%}
@@ -109,9 +96,8 @@
                     "dataType": "json",
                     "success": function(res) {
                         let p = document.createElement("p")
-                        p.setAttribute("class", "actual-comment")
                         p.textContent = res['user'] + ": " + res["comment"]
-                        comments_arr[image_id - 1].appendChild(p)
+                        
                     }
                 })
                 $(".comment-val").val("") 
